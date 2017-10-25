@@ -1,0 +1,97 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><title>Title Slide</title><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" name="viewport"><link href="./css/reveal.css" rel="stylesheet"><link rel="stylesheet" href="./css/theme/chariot.css" id="theme"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css"><link rel="stylesheet" href="./asciidoctor-coderay.css"><link href="./lib/css/zenburn.css" rel="stylesheet"><script>document.write( '<link rel="stylesheet" href="./css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );</script></head><body><div class="reveal"><div class="slides"><section class="title"><h1>Title Slide</h1></section><section id="_agenda"><h2>Agenda</h2><div class="ulist"><ul><li><p>One</p></li><li><p>Two</p><div class="ulist"><ul><li><p>Subhead</p></li></ul></div></li></ul></div></section>
+<section><section id="_first_slide_of_section"><h2>First Slide of Section</h2><div class="listingblock"><div class="content"><pre class="CodeRay"><code class="bash language-bash"><span class="line-numbers">1</span>&gt; <strong>npm install</strong> -g @angular/cli@1.3.2</code></pre></div></div><div class="ulist"><ul><li><p>This command-line interface creates and maintains Angular projects</p></li><li><p>All projects are created as <code>npm</code> modules</p></li><li><p>The projects use a standard package management system built-in to <code>package.json</code></p></li></ul></div></section><section id="_second_slide_of_section_sample"><h2>Second slide of section - sample</h2><div class="paragraph"><p>Using <em>styles</em> allows components to embed styles in a multi-line string</p></div>
+<div class="listingblock"><div class="content"><pre class="CodeRay"><code class="javascript language-javascript"><span class="line-numbers">1</span><span class="error">@</span>Component({
+<span class="line-numbers">2</span>   <span class="key">styles</span>: [
+<span class="line-numbers">3</span>    <span class="error">`</span>h1 { <span class="key">color</span>: green; }<span class="error">`</span>
+<span class="line-numbers">4</span>   ]
+<span class="line-numbers">5</span>})</code></pre></div></div>
+<div class="paragraph"><p>By default, Angular attempts to tag these styles with prefixes to namespace them to the component</p></div>
+<div class="listingblock"><div class="content"><pre class="CodeRay"><code class="javascript language-javascript"><span class="line-numbers">1</span><span class="error">@</span>Component({
+<span class="line-numbers">2</span>  <span class="comment">// default...</span>
+<span class="line-numbers">3</span>  <span class="key">encapsulation</span>: ViewEncapsulation.Emulated
+<span class="line-numbers">4</span>})</code></pre></div></div></section><section id="_testing_graphs_with_graphviz"><h2>Testing graphs with graphviz</h2><div class="ulist"><ul><li><p>Data emitted, element by element, from a series of timed events</p></li></ul></div>
+<div class="listingblock"><div class="content"><pre class="CodeRay"><code class="javascript language-javascript"><span class="line-numbers">1</span>let countByTens =
+<span class="line-numbers">2</span>    Observable<strong>.interval(500)</strong> <span class="comment">// every 1/2 second</span>
+<span class="line-numbers">3</span>              .map((counter) =&gt; counter * <span class="integer">10</span>);
+<span class="line-numbers">4</span>
+<span class="line-numbers">5</span>countByTens.subscribe((value) =&gt; { console.log(value) });
+<span class="line-numbers">6</span><span class="comment">// 0, 10, 20, 30, 40, 50</span></code></pre></div></div>
+<div class="ulist"><ul><li><p>Observable Output</p><div class="imageblock" style=""><img src="./images/observablechain.svg" alt="observablechain" width="900" height="200"></div></li></ul></div></section></section>
+<section><section id="_new_section"><h2>New section</h2><div class="paragraph"><p>stuff</p></div></section><section id="_second_slide"><h2>second slide</h2><div class="paragraph"><p>stuff 2</p></div></section></section></div></div><script src="./lib/js/head.min.js"></script><script src="./js/reveal.js"></script><script>// See https://github.com/hakimel/reveal.js#configuration for a full list of configuration options
+Reveal.initialize({
+  // Display controls in the bottom right corner
+  controls: true,
+  // Display a presentation progress bar
+  progress: true,
+  // Display the page number of the current slide
+  slideNumber: true,
+  // Push each slide change to the browser history
+  history: true,
+  // Enable keyboard shortcuts for navigation
+  keyboard: true,
+  // Enable the slide overview mode
+  overview: true,
+  // Vertical centering of slides
+  center: true,
+  // Enables touch navigation on devices with touch input
+  touch: true,
+  // Loop the presentation
+  loop: false,
+  // Change the presentation direction to be RTL
+  rtl: false,
+  // Turns fragments on and off globally
+  fragments: true,
+  // Flags if the presentation is running in an embedded mode,
+  // i.e. contained within a limited portion of the screen
+  embedded: false,
+  // Number of milliseconds between automatically proceeding to the
+  // next slide, disabled when set to 0, this value can be overwritten
+  // by using a data-autoslide attribute on your slides
+  autoSlide: 0,
+  // Stop auto-sliding after user input
+  autoSlideStoppable: true,
+  // Enable slide navigation via mouse wheel
+  mouseWheel: false,
+  // Hides the address bar on mobile devices
+  hideAddressBar: true,
+  // Opens links in an iframe preview overlay
+  previewLinks: false,
+  // Theme (e.g., beige, black, league, night, serif, simple, sky, solarized, white)
+  // NOTE setting the theme in the config no longer works in reveal.js 3.x
+  //theme: Reveal.getQueryHash().theme || 'chariot',
+  // Transition style (e.g., none, fade, slide, convex, concave, zoom)
+  transition: Reveal.getQueryHash().transition || 'slide',
+  // Transition speed (e.g., default, fast, slow)
+  transitionSpeed: 'default',
+  // Transition style for full page slide backgrounds (e.g., none, fade, slide, convex, concave, zoom)
+  backgroundTransition: 'fade',
+  // Number of slides away from the current that are visible
+  viewDistance: 3,
+  // Parallax background image (e.g., "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'")
+  parallaxBackgroundImage: '',
+  // Parallax background size in CSS syntax (e.g., "2100px 900px")
+  parallaxBackgroundSize: '',
+
+  // The "normal" size of the presentation, aspect ratio will be preserved
+  // when the presentation is scaled to fit different resolutions. Can be
+  // specified using percentage units.
+  width: 960,
+  height: 700,
+
+  // Factor of the display size that should remain empty around the content
+  margin: 0.1,
+
+  // Bounds for smallest/largest possible scale to apply to content
+  minScale: 0.2,
+  maxScale: 1.5,
+
+  // Optional libraries used to extend on reveal.js
+  dependencies: [
+      { src: './lib/js/classList.js', condition: function() { return !document.body.classList; } },
+      { src: './plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: './plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      
+      { src: './plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+      { src: './plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+  ]
+});</script></body></html>

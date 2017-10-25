@@ -1,0 +1,92 @@
+ifdef::slides[]
+include::asciidoc-slides.settings[]
+endif::slides[]
+
+ifndef::slides[]
+include::asciidoc-pdf.settings[]
+endif::slides[]
+
+= Title Slide
+
+== Agenda
+
+* One
+* Two
+** Subhead
+
+== First Slide of Section
+
+ifdef::slides[[source,bash,linenums,subs="+quotes"]]
+ifndef::slides[[subs=+macros,linenums,subs="+quotes"]]
+----
+> *npm install* -g @angular/cli@1.3.2
+----
+
+* This command-line interface creates and maintains Angular projects
+* All projects are created as `npm` modules
+* The projects use a standard package management system built-in to `package.json`
+
+=== Second slide of section - sample
+
+Using _styles_ allows components to embed styles in a multi-line string
+
+ifdef::slides[[source,javascript,linenums]]
+ifndef::slides[[subs=+macros,linenums]]
+----
+@Component({
+   styles: [
+    `h1 { color: green; }`
+   ]
+})
+----
+
+
+By default, Angular attempts to tag these styles with prefixes to namespace them to the component
+
+ifdef::slides[[source,javascript,linenums,subs="+quotes,+macros"]]
+ifndef::slides[[subs=+macros,linenums,subs="+quotes,+macros"]]
+----
+@Component({
+  // default...
+  encapsulation: ViewEncapsulation.Emulated
+})
+----
+
+=== Testing graphs with graphviz
+
+* Data emitted, element by element, from a series of timed events
+
+[source,javascript,linenums,subs=+macros]
+----
+let countByTens =
+    Observablepass:quotes[*.interval(500)*] // every 1/2 second
+              .map((counter) => counter * 10);
+
+countByTens.subscribe((value) => { console.log(value) });
+// 0, 10, 20, 30, 40, 50
+----
+
+* Observable Output
++
+ifdef::slides[[graphviz,'observablechain',svg,width=900,height=200]]
+ifndef::slides[[graphviz,'observablechain',svg,width=400]]
+....
+digraph G {
+rankdir="LR"
+Interval [label="interval"]
+Result1 [label="MAP <0 * 10>"]
+Result2 [label="MAP <1 * 10>"]
+Result3 [label="MAP <2 * 10>"]
+Interval -> Result1 [label="next(0)"]
+Interval -> Result2 [label="next(1)"]
+Interval -> Result3 [label="next(2)"]
+}
+....
+
+== New section
+
+stuff
+
+=== second slide
+
+stuff 2
