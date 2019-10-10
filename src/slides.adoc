@@ -85,7 +85,9 @@ Interval -> Result3 [label="next(2)"]
 
 == New section
 
-stuff
+=== Sample Image
+
+image::HorseHead.png[]
 
 === second slide
 
